@@ -44,9 +44,7 @@ class UI{
 
         const container = document.querySelector('.container');
         const form = document.querySelector('#book-form');
-       
-        container.insertBefore(div, form);
-        
+        //container.insertBefore(div, form);
     }
 
     static deleteBook(el){

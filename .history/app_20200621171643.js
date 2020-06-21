@@ -44,7 +44,7 @@ class UI{
 
         const container = document.querySelector('.container');
         const form = document.querySelector('#book-form');
-       
+        console.log(container);console.log(form);console.log(div);
         container.insertBefore(div, form);
         
     }

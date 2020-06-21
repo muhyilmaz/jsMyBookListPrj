@@ -36,18 +36,6 @@ class UI{
             
             list.appendChild(row);
     }
-    
-    static showAlert(msg, className){
-        const div = document.createElement('div');
-        div.className = `alert alert-${className}`;
-        div.appendChild(document.createTextNode(msg));
-
-        const container = document.querySelector('.container');
-        const form = document.querySelector('#book-form');
-       
-        container.insertBefore(div, form);
-        
-    }
 
     static deleteBook(el){
         if(el.classList.contains('delete')){
@@ -76,27 +64,23 @@ document.querySelector('#book-form').addEventListener('submit', (e)=>
     const isbn = document.querySelector('#isbn').value;
     
     // Validate
-    if(title ==='' || author ==='' || isbn ===''){
-        //alert('fill blank');
-
-        UI.showAlert('Fill blancs', 'danger');
+    /*if(title ==='' || author ==='' || isbn ===''){
+        alert('fill blank');
     }
-    else{
-// Instantiate book
-
-const book = new Book(title, author, isbn);
-console.log(book);
-
-//Add book to UI
-UI.addBookToList(book);
-
-//Clear fields
-UI.clearFields();
-
+*/
+    static showAlert(message, className){
+        
     }
+    // Instantiate book
 
+    const book = new Book(title, author, isbn);
+    console.log(book);
 
-    
+    //Add book to UI
+    UI.addBookToList(book);
+
+    //Clear fields
+    UI.clearFields();
 })
 
 
