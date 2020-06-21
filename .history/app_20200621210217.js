@@ -122,9 +122,6 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 
         //Add book to UI
         UI.addBookToList(book);
-        
-        //Add book to Store
-        Store.addBook(book);
 
         //Show success message
         UI.showAlert('Book Added', 'succes');
@@ -142,8 +139,6 @@ document.querySelector('#book-list').addEventListener('click', (e) => {
     console.log(e.target)
 
     UI.deleteBook(e.target);
-    // remove book from 
-    Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
     UI.showAlert('Book Removed', 'success');
 
 })

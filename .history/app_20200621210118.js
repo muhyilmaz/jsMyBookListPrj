@@ -10,7 +10,14 @@ class Book {
 //UI Class : Handle UI Tasks
 class UI {
     static displayBooks() {
-        const StoredBooks = Store.getBooks();
+        const StoredBooks = [
+            {
+                title: "RiyazüsSalihin",
+                author: "İmam Nevevi",
+                isbn: "341421412"
+
+            }
+        ];
         const books = StoredBooks;
 
         books.forEach((book) => UI.addBookToList(book));
@@ -91,11 +98,9 @@ class Store {
             }
         });
 
-        localStorage.setItem('books', JSON.stringify(books));
+        localStorage.setItem('books')
     }
 }
-
-
 // Event : Display Books
 document.addEventListener('DOMContentLoaded', UI.displayBooks);
 // Event : Add Books
@@ -122,9 +127,6 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 
         //Add book to UI
         UI.addBookToList(book);
-        
-        //Add book to Store
-        Store.addBook(book);
 
         //Show success message
         UI.showAlert('Book Added', 'succes');
@@ -142,8 +144,6 @@ document.querySelector('#book-list').addEventListener('click', (e) => {
     console.log(e.target)
 
     UI.deleteBook(e.target);
-    // remove book from 
-    Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
     UI.showAlert('Book Removed', 'success');
 
 })
